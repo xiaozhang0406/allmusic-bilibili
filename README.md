@@ -1,5 +1,7 @@
 # AllMusic Bilibili 音乐源 + 客户端修复
 
+音乐 HTTP 服务现支持 Range 拖动播放、健康检查、命令行/环境变量配置及本机自动测试。默认仅监听本机，由反向代理提供对外 HTTPS；部署与验证见 [HTTP 服务说明](docs/HTTP_SERVICE.md)。
+
 让 [AllMusic](https://github.com/Coloryr/AllMusic) 插件支持 **Bilibili 视频点歌** 的完整解决方案。
 
 > **背景**：AllMusic 官方只有网易云源（netapi），但网易云 weapi 接口对**云服务器 IP** 有风控（HTTP 200 返回空）。B 站虽然 API 可用，但 **DASH 纯音频接口对数据中心 IP 同样限流**（`fnval=16` 拿不到 audio），只能拿到**含视频轨的混合 MP4**——AllMusic 客户端（按纯音频设计）解不了这种文件。

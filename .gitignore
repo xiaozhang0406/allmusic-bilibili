@@ -6,6 +6,9 @@ out2/
 out3/
 out4/
 build/
+__pycache__/
+*.py[cod]
+.venv/
 
 # IDE
 .idea/

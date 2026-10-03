@@ -1,0 +1,19 @@
+[Unit]
+Description=AllMusic MP3 cache HTTP service
+After=network.target
+
+[Service]
+Type=simple
+User=minecraft
+Group=minecraft
+Environment=ALLMUSIC_BILI_CACHE_DIR=/home/minecraft/music_cache
+ExecStart=/usr/bin/python3 /home/minecraft/music_server.py --host 127.0.0.1 --port 8090
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target
